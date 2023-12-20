@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MdDashboard } from "react-icons/md";
-import { FaPlusCircle } from "react-icons/fa";
-import { FaUserCircle } from "react-icons/fa";
+import { MdDashboard } from "react-icons/lib/md";
+import { FaPlusCircle } from "react-icons/lib/fa";
+import { FaUserCircle } from "react-icons/lib/fa";
 
 const Sidebar = () => {
   return (

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Stat from "../components/Stat";
 import { HiCurrencyDollar } from "react-icons/hi2";
 import { FaShoppingCart } from "react-icons/fa";
