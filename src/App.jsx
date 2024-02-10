@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import AddProduct from "./pages/AddProduct";
+import axios from "axios";
 
 const App = () => {
-  const [productList, setProductList] = useState([
-    {
-      id: Date.now(),
-      name: "Philips Trimmer",
-      category: "Electronics",
-      price: 13,
-      quantity: 3,
-    },
-  ]);
+  // const [productList, setProductList] = useState([
+  //   {
+  //     id: Date.now(),
+  //     name: "Philips Trimmer",
+  //     category: "Electronics",
+  //     price: 13,
+  //     quantity: 3,
+  //   },
+  // ]);
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/")
+      .then((result) => setProductList(result.data));
+  }, [productList]);
 
   return (
     <div className="relative lg:grid lg:grid-cols-6 h-screen font-montserrat">

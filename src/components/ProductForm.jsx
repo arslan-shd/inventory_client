@@ -1,26 +1,22 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const ProductForm = ({ setProductList }) => {
-  const [title, setTitle] = useState("");
+  const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState("");
 
   const handleAddProduct = (e) => {
-    const newProduct = {
-      id: Date.now(),
-      name: title,
-      category: category,
-      price: price,
-      quantity: quantity,
-    };
     e.preventDefault();
-    setProductList((prev) => [...prev, newProduct]);
-
-    // setCategory("");
-    // setPrice("");
-    // setTitle("");
-    // setQuantity("");
+    axios
+      .post("http://localhost:5000/product", {
+        name,
+        category,
+        price,
+        quantity,
+      })
+      .then((result) => console.log(result));
   };
 
   return (
@@ -34,7 +30,7 @@ const ProductForm = ({ setProductList }) => {
             className="mt-2 w-full bg-accentRed/[0.07] p-2"
             type="text"
             placeholder="E.g. Philips Trimmer"
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
         </fieldset>
         <fieldset>

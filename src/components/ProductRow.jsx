@@ -1,21 +1,42 @@
 import React, { useState } from "react";
-import { MdEdit } from "react-icons/md";
-import { FaTrashAlt } from "react-icons/fa";
-import { IoMdCloseCircle } from "react-icons/io";
+// import { MdEdit } from "react-icons/md";
+// import { FaTrashAlt } from "react-icons/fa";
+// import { IoMdCloseCircle } from "react-icons/io";
+import axios from "axios";
 
-const ProductRow = ({ product, index, productList, setProductList }) => {
+const ProductRow = ({ product, index }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [title, setTitle] = useState(product.name);
-
   const { name, category, price, quantity, id } = product;
+  const [updatedName, setUpdatedName] = useState(name);
+  const [updatedCategory, setUpdatedCategory] = useState(category);
+  const [updatedPrice, setUpdatedPrice] = useState(price);
+  const [updatedQuantity, setUpdatedQuantity] = useState(quantity);
 
   const openModal = () => {
     setIsModalOpen(true);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .patch(`http://localhost:5000/products/${id}`, {
+        updatedName,
+        updatedCategory,
+        updatedPrice,
+        updatedQuantity,
+      })
+      .then((result) => {
+        console.log(result);
+        setIsModalOpen(false);
+      })
+      .catch((err) => console.log(err + "from frontend"));
+  };
+
   const handleDelete = () => {
-    const newProductList = productList.filter((product) => product.id != id);
-    setProductList(newProductList);
+    axios
+      .delete(`http://localhost:5000/products/${id}`)
+      .then((result) => console.log(result));
   };
 
   return (
@@ -40,16 +61,18 @@ const ProductRow = ({ product, index, productList, setProductList }) => {
             title="Edit Product"
             onClick={openModal}
           >
-            <MdEdit />
+            {/* <MdEdit /> */}
+            Edit
           </button>
           <button
             className="text-red-600"
             title="Delete Product"
-            onClick={(e) => {
-              handleDelete(e.target.value);
+            onClick={() => {
+              handleDelete();
             }}
           >
-            <FaTrashAlt />
+            {/* <FaTrashAlt /> */}
+            Del
           </button>
         </div>
       </div>
@@ -63,10 +86,11 @@ const ProductRow = ({ product, index, productList, setProductList }) => {
                 Update Product
               </h2>
               <button onClick={() => setIsModalOpen(false)}>
-                <IoMdCloseCircle size="28" />
+                {/* <IoMdCloseCircle size="28" /> */}
+                close
               </button>
             </div>
-            <form className="mt-4">
+            <form onSubmit={(e) => handleSubmit(e)} className="mt-4">
               <div className="grid gap-y-6 gap-x-12 md:grid-cols-2">
                 <fieldset>
                   <label htmlFor="name">Product Name</label>
@@ -75,8 +99,8 @@ const ProductRow = ({ product, index, productList, setProductList }) => {
                     id="name"
                     className="mt-2 w-full bg-accentRed/[0.07] p-2"
                     type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    value={updatedName}
+                    onChange={(e) => setUpdatedName(e.target.value)}
                   />
                 </fieldset>
                 <fieldset>
@@ -86,6 +110,8 @@ const ProductRow = ({ product, index, productList, setProductList }) => {
                     id="category"
                     className="mt-2 w-full bg-accentRed/[0.07] p-2"
                     type="text"
+                    value={updatedCategory}
+                    onChange={(e) => setUpdatedCategory(e.target.value)}
                   />
                 </fieldset>
                 <fieldset>
@@ -95,6 +121,8 @@ const ProductRow = ({ product, index, productList, setProductList }) => {
                     id="price"
                     className="mt-2 w-full bg-accentRed/[0.07] p-2"
                     type="number"
+                    value={updatedPrice}
+                    onChange={(e) => setUpdatedPrice(parseInt(e.target.value))}
                   />
                 </fieldset>
                 <fieldset>
@@ -104,6 +132,10 @@ const ProductRow = ({ product, index, productList, setProductList }) => {
                     id="quantity"
                     className="mt-2 w-full bg-accentRed/[0.07] p-2"
                     type="number"
+                    value={updatedQuantity}
+                    onChange={(e) =>
+                      setUpdatedQuantity(parseInt(e.target.value))
+                    }
                   />
                 </fieldset>
               </div>
