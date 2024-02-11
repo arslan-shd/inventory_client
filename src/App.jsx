@@ -19,7 +19,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/")
+      .get("https://inventory-server-2oby.onrender.com/")
       .then((result) => setProductList(result.data));
   }, [productList]);
 

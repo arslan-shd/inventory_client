@@ -10,7 +10,7 @@ const ProductForm = ({ setProductList }) => {
   const handleAddProduct = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/product", {
+      .post("http://localhost:4000/product", {
         name,
         category,
         price,
