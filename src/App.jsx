@@ -24,7 +24,10 @@ const App = () => {
   }, [productList]);
 
   return (
-    <div className="relative lg:grid lg:grid-cols-6 h-screen font-montserrat">
+    <div
+      style={{ minHeight: "100dvh" }}
+      className="relative lg:grid lg:grid-cols-6 font-montserrat"
+    >
       <Sidebar />
       <div className="bg-grayBlack/[0.1] lg:col-span-5 py-2 sm:px-8 px-4">
         <Routes>

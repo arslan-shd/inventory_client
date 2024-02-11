@@ -9,6 +9,7 @@ const Sidebar = () => {
     <div className="lg:col-span-1">
       <div className=" bg-grayBlack flex items-center gap-2 py-4 text-white px-4">
         {/* <FaUserCircle size="24" /> */}
+        <img className="w-7" src="user-icon.png" alt="user-profile-icon" />
         <span className="text-lg">Arslan Shahid</span>
       </div>
       <div className="p-4 h-full bg-brown/[0.15]">
