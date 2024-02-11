@@ -9,7 +9,7 @@ import ProductRow from "../components/ProductRow";
 const Home = ({ productList, setProductList }) => {
   const categoriesMap = {};
 
-  if (productList) {
+  if (productList > 0) {
     productList.forEach(function (product) {
       categoriesMap[product.category] =
         (categoriesMap[product.category] || 0) + 1;
