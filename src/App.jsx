@@ -29,7 +29,10 @@ const App = () => {
       className="relative lg:grid lg:grid-cols-6 font-montserrat"
     >
       <Sidebar />
-      <div className="bg-grayBlack/[0.1] lg:col-span-5 py-2 sm:px-8 px-4">
+      <div
+        style={{ minHeight: "100dvh" }}
+        className="bg-grayBlack/[0.1] lg:col-span-5 py-2 sm:px-8 px-4"
+      >
         <Routes>
           <Route
             path="/"
