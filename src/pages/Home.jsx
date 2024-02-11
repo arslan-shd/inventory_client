@@ -7,14 +7,12 @@ import ProductRowHead from "../components/ProductRowHead";
 import ProductRow from "../components/ProductRow";
 
 const Home = ({ productList, setProductList }) => {
-  // const categoriesMap = {};
+  const categoriesMap = {};
 
-  // if (productList > 0) {
-  //   productList.forEach(function (product) {
-  //     categoriesMap[product.category] =
-  //       (categoriesMap[product.category] || 0) + 1;
-  //   });
-  // }
+  productList.forEach(function (product) {
+    categoriesMap[product.category] =
+      (categoriesMap[product.category] || 0) + 1;
+  });
 
   const stats = [
     {
@@ -45,8 +43,7 @@ const Home = ({ productList, setProductList }) => {
     },
     {
       title: "All Categories",
-      // value: Object.keys(categoriesMap).length,
-      value: 0,
+      value: Object.keys(categoriesMap).length,
       color: "bg-grayBlack",
       // icon: <BiSolidCategory size="30" />,
       icon: "category-icon.png",
