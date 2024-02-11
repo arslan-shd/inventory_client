@@ -51,7 +51,7 @@ const ProductForm = ({ setProductList }) => {
             id="price"
             className="mt-2 w-full bg-accentRed/[0.07] p-2"
             type="number"
-            placeholder="$12"
+            placeholder="₹"
             onChange={(e) => setPrice(Number(e.target.value))}
           />
         </fieldset>

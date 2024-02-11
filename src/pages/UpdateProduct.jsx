@@ -34,7 +34,7 @@ const UpdateProduct = () => {
               id="name"
               className="mt-2 w-full bg-accentRed/[0.07] p-2"
               type="text"
-              placeholder="$12"
+              placeholder="₹500"
               onChange={(e) => setPrice(Number(e.target.value))}
             />
           </fieldset>

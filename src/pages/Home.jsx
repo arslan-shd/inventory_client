@@ -25,7 +25,7 @@ const Home = ({ productList, setProductList }) => {
     {
       title: "Store Value",
       value:
-        "$" +
+        "₹" +
         productList.reduce(
           (acc, product) => acc + product.price * product.quantity,
           0

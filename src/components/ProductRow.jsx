@@ -41,19 +41,22 @@ const ProductRow = ({ product, index }) => {
 
   return (
     <>
-      <div className="mb-4 grid grid-cols-4 lg:grid-cols-7 text-center text-gray">
+      <div
+        style={quantity ? { color: "#212529" } : { color: "#f08c00" }}
+        className={`mb-4 grid grid-cols-4 lg:grid-cols-7 items-center text-center`}
+      >
         {/* s/n */}
         <div>{index + 1}</div>
         {/* name */}
-        <div className="">{name}</div>
+        <div>{name}</div>
         {/* category */}
         <div className="hidden lg:block">{category}</div>
         {/* Price */}
-        <div>${price}</div>
+        <div>₹{price}</div>
         {/* Quantity */}
         <div className="hidden lg:block">{quantity}</div>
         {/* value */}
-        <div className="hidden lg:block">${price * quantity}</div>
+        <div className="hidden lg:block">₹{price * quantity}</div>
         {/* Actions */}
         <div className="flex gap-2">
           <button

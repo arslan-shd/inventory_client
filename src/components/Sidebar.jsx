@@ -16,7 +16,7 @@ const Sidebar = () => {
           <li className="flex gap-2 items-center bg-accentRed px-4 py-2 rounded-lg">
             {/* <MdDashboard /> */}
             <img
-              className="w-8"
+              className="w-6"
               src="dashboard-icon.png"
               alt="dashboard-icon"
             />
@@ -24,7 +24,7 @@ const Sidebar = () => {
           </li>
           <li className="flex gap-2 items-center bg-accentRed px-4 py-2 rounded-lg">
             {/* <FaPlusCircle /> */}
-            <img className="w-10" src="add-icon.png" alt="add-product-icon" />
+            <img className="w-8" src="add-icon.png" alt="add-product-icon" />
             <Link to="/add-product">Add Product</Link>
           </li>
         </ul>
