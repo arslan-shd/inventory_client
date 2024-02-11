@@ -65,7 +65,7 @@ const ProductRow = ({ product, index }) => {
             onClick={openModal}
           >
             {/* <MdEdit /> */}
-            <img className="w-7" src="edit-icon.png" alt="edit-icon" />
+            <img className="w-6" src="edit-icon.png" alt="edit-icon" />
           </button>
           <button
             className="text-red-600"
