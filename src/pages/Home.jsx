@@ -2,7 +2,7 @@ import Stat from "../components/Stat";
 // import { HiCurrencyDollar } from "react-icons/hi2";
 // import { FaShoppingCart } from "react-icons/fa";
 // import { BsCartXFill } from "react-icons/bs";
-import { BiSolidCategory } from "react-icons/bi";
+// import { BiSolidCategory } from "react-icons/bi";
 import ProductRowHead from "../components/ProductRowHead";
 import ProductRow from "../components/ProductRow";
 
@@ -20,6 +20,7 @@ const Home = ({ productList, setProductList }) => {
       value: productList.length,
       color: "bg-magenta",
       // icon: <FaShoppingCart size="30" />,
+      icon: "cart-icon.png",
     },
     {
       title: "Store Value",
@@ -31,18 +32,21 @@ const Home = ({ productList, setProductList }) => {
         ),
       color: "bg-brown",
       // icon: <HiCurrencyDollar size="30" />,
+      icon: "rupee-icon.png",
     },
     {
       title: "Out of Stock",
       value: productList.filter((product) => product.quantity === 0).length,
       color: "bg-accentRed",
       // icon: <BsCartXFill size="30" />,
+      icon: "outofstock-icon.png",
     },
     {
       title: "All Categories",
       value: Object.keys(categoriesMap).length,
       color: "bg-grayBlack",
-      icon: <BiSolidCategory size="30" />,
+      // icon: <BiSolidCategory size="30" />,
+      icon: "category-icon.png",
     },
   ];
 

@@ -62,7 +62,7 @@ const ProductRow = ({ product, index }) => {
             onClick={openModal}
           >
             {/* <MdEdit /> */}
-            Edit
+            <img className="w-7" src="edit-icon.png" alt="edit-icon" />
           </button>
           <button
             className="text-red-600"
@@ -72,7 +72,7 @@ const ProductRow = ({ product, index }) => {
             }}
           >
             {/* <FaTrashAlt /> */}
-            Del
+            <img className="w-7" src="delete-icon.png" alt="delete-icon" />
           </button>
         </div>
       </div>
@@ -87,7 +87,7 @@ const ProductRow = ({ product, index }) => {
               </h2>
               <button onClick={() => setIsModalOpen(false)}>
                 {/* <IoMdCloseCircle size="28" /> */}
-                close
+                <img className="w-6" src="close-icon.png" alt="close-icon" />
               </button>
             </div>
             <form onSubmit={(e) => handleSubmit(e)} className="mt-4">

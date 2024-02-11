@@ -15,10 +15,16 @@ const Sidebar = () => {
         <ul className="flex lg:flex-col gap-3 text-white">
           <li className="flex gap-2 items-center bg-accentRed px-4 py-2 rounded-lg">
             {/* <MdDashboard /> */}
+            <img
+              className="w-10"
+              src="dashboard-icon.png"
+              alt="dashboard-icon"
+            />
             <Link to="/">Dashboard</Link>
           </li>
           <li className="flex gap-2 items-center bg-accentRed px-4 py-2 rounded-lg">
             {/* <FaPlusCircle /> */}
+            <img className="w-10" src="add-icon.png" alt="add-product-icon" />
             <Link to="/add-product">Add Product</Link>
           </li>
         </ul>
