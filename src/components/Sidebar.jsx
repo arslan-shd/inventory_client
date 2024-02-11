@@ -16,7 +16,7 @@ const Sidebar = () => {
           <li className="flex gap-2 items-center bg-accentRed px-4 py-2 rounded-lg">
             {/* <MdDashboard /> */}
             <img
-              className="w-10"
+              className="w-8"
               src="dashboard-icon.png"
               alt="dashboard-icon"
             />
