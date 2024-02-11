@@ -20,7 +20,7 @@ const ProductRow = ({ product, index }) => {
     e.preventDefault();
 
     axios
-      .patch(`http://localhost:4000/products/${id}`, {
+      .patch(`https://inventory-server-2oby.onrender.com/products/${id}`, {
         updatedName,
         updatedCategory,
         updatedPrice,
@@ -35,7 +35,7 @@ const ProductRow = ({ product, index }) => {
 
   const handleDelete = () => {
     axios
-      .delete(`http://localhost:4000/products/${id}`)
+      .delete(`https://inventory-server-2oby.onrender.com/products/${id}`)
       .then((result) => console.log(result));
   };
 

@@ -10,7 +10,7 @@ const ProductForm = ({ setProductList }) => {
   const handleAddProduct = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/product", {
+      .post("https://inventory-server-2oby.onrender.com/product", {
         name,
         category,
         price,
