@@ -9,10 +9,12 @@ import ProductRow from "../components/ProductRow";
 const Home = ({ productList, setProductList }) => {
   const categoriesMap = {};
 
-  productList.forEach(function (product) {
-    categoriesMap[product.category] =
-      (categoriesMap[product.category] || 0) + 1;
-  });
+  if (productList) {
+    productList.forEach(function (product) {
+      categoriesMap[product.category] =
+        (categoriesMap[product.category] || 0) + 1;
+    });
+  }
 
   const stats = [
     {
