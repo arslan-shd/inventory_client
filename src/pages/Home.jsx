@@ -2,7 +2,7 @@ import Stat from "../components/Stat";
 // import { HiCurrencyDollar } from "react-icons/hi2";
 // import { FaShoppingCart } from "react-icons/fa";
 // import { BsCartXFill } from "react-icons/bs";
-// import { BiSolidCategory } from "react-icons/bi";
+import { BiSolidCategory } from "react-icons/bi";
 import ProductRowHead from "../components/ProductRowHead";
 import ProductRow from "../components/ProductRow";
 
@@ -42,7 +42,7 @@ const Home = ({ productList, setProductList }) => {
       title: "All Categories",
       value: Object.keys(categoriesMap).length,
       color: "bg-grayBlack",
-      // icon: <BiSolidCategory size="30" />,
+      icon: <BiSolidCategory size="30" />,
     },
   ];
 
